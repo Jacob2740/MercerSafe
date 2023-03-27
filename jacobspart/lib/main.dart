@@ -3,14 +3,20 @@ import 'package:url_launcher/url_launcher.dart';
 
 // function to trigger build when the app is run
 void main() {
-runApp(MaterialApp(
-	initialRoute: '/',
-	routes: {
-	'/': (context) => const HomeRoute(),
-	'/second': (context) => const CampusMap(),
-	'/third': (context) => const EmergencyButton(),
-	},
-)); //MaterialApp
+  runApp( 
+    MaterialApp( 
+      theme: ThemeData (
+        primarySwatch: Colors.deepOrange,
+        scaffoldBackgroundColor: Colors.blueGrey,
+      ),
+      initialRoute: '/',
+      routes: {
+      '/': (context) => const HomeRoute(),
+      '/second': (context) => const CampusMap(),
+      '/third': (context) => const EmergencyButton(),
+      },
+    )
+  ); 
 }
 
 
@@ -23,7 +29,7 @@ Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(
 		title: const Text('Jacobs Part'),
-		backgroundColor: Color.fromARGB(255, 215, 116, 11),
+		//backgroundColor: Color.fromARGB(255, 215, 116, 11),
 	), // AppBar
 	body: Center(
 		child: Column(
@@ -47,10 +53,10 @@ Widget build(BuildContext context) {
               },
               ),
             ), // ElevatedButton
-		], // <Widget>[]
-		), // Column
-	), // Center
-	); // Scaffold
+		], 
+		), 
+	), 
+	); 
 }
 }
 
@@ -64,7 +70,7 @@ const CampusMap({Key? key}) : super(key: key);
     return Scaffold(
     appBar: AppBar(
       title: const Text("Campus Map"),
-      backgroundColor: Color.fromARGB(255, 215, 116, 11),
+      //backgroundColor: Color.fromARGB(255, 215, 116, 11),
     ), // AppBar
     body: Center(
       child: Column (
@@ -85,15 +91,15 @@ const CampusMap({Key? key}) : super(key: key);
               child: const Text('Back!'),
             ),
           ),
-          // Image.asset(
-          //   'assets/images/campus_map.png',
-          //   width: 200,
-          //   height: 200,
-          // ),
+          Image.asset(
+            'assets/campus_map.png',
+            width: 200,
+            height: 200,
+          ),
         ],
       )
-    ), // Center
-    ); // Scaffold
+    ), 
+    ); 
   }
 }
 
@@ -119,7 +125,7 @@ const EmergencyButton({Key? key}) : super(key: key);
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Emergency Call Button'),
-          backgroundColor: Color.fromARGB(255, 215, 116, 11),
+          //backgroundColor: Color.fromARGB(255, 215, 116, 11),
         ), // AppBar
         body: SafeArea(
           child: Center(

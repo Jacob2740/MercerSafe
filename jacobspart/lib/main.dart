@@ -62,16 +62,35 @@ const CampusMap({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-      title: const Text("Click Me Page"),
+      title: const Text("Campus Map"),
       backgroundColor: Color.fromARGB(255, 215, 116, 11),
     ), // AppBar
     body: Center(
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Text('Back!'),
-      ), // ElevatedButton
+      child: Column (
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              'Below find a detailed map of campus as well as the campus emergency stations:',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Back!'),
+            ),
+          ),
+          // Image.asset(
+          //   'assets/images/campus_map.png',
+          //   width: 200,
+          //   height: 200,
+          // ),
+        ],
+      )
     ), // Center
     ); // Scaffold
   }

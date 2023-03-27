@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // function to trigger build when the app is run
 void main() {
@@ -98,16 +99,73 @@ const CampusMap({Key? key}) : super(key: key);
 
 
 
+makingCall() async {
+  var url = Uri.parse("tel:6785164182");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+
+
 class EmergencyButton extends StatelessWidget {
 const EmergencyButton({Key? key}) : super(key: key);
 
 @override
-Widget build(BuildContext context) {
-	return Scaffold(
-    appBar: AppBar(
-      title: const Text("Tap Me Page"),
-      backgroundColor: Color.fromARGB(255, 215, 116, 11),
-    ), // AppBar
-	); // Scaffold
-}
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Emergency Call Button'),
+          backgroundColor: Color.fromARGB(255, 215, 116, 11),
+        ), // AppBar
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              children: [
+                Container(
+                  height: 250.0,
+                ),//Container
+                const Text(
+                  'Need Help?',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),//TextStyle
+                ),//Text
+                Container(
+                  height: 20.0,
+                ),
+                const Text(
+                  'Call MERPO',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  height: 20.0,
+                ),
+               ElevatedButton(
+                  onPressed: makingCall,
+                  style: ButtonStyle(
+                    padding:
+                        MaterialStateProperty.all(const EdgeInsets.all(5.0)),
+                    textStyle: MaterialStateProperty.all(
+                      const TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  child: const Text('Call'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }          
 }

@@ -6,11 +6,13 @@ runApp(MaterialApp(
 	initialRoute: '/',
 	routes: {
 	'/': (context) => const HomeRoute(),
-	'/second': (context) => const SecondRoute(),
-	'/third': (context) => const ThirdRoute(),
+	'/second': (context) => const CampusMap(),
+	'/third': (context) => const EmergencyButton(),
 	},
 )); //MaterialApp
 }
+
+
 
 class HomeRoute extends StatelessWidget {
 const HomeRoute({Key? key}) : super(key: key);
@@ -19,25 +21,31 @@ const HomeRoute({Key? key}) : super(key: key);
 Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(
-		title: const Text('Geeks for Geeks'),
-		backgroundColor: Colors.green,
+		title: const Text('Jacobs Part'),
+		backgroundColor: Color.fromARGB(255, 215, 116, 11),
 	), // AppBar
 	body: Center(
 		child: Column(
 		mainAxisAlignment: MainAxisAlignment.center,
 		children: <Widget>[
-			ElevatedButton(
-			child: const Text('Click Me!'),
-			onPressed: () {
-				Navigator.pushNamed(context, '/second');
-			},
-			), // ElevatedButton
-			ElevatedButton(
-			child: const Text('Tap Me!'),
-			onPressed: () {
-				Navigator.pushNamed(context, '/third');
-			},
-			), // ElevatedButton
+			Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+              child: const Text('Campus Map'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              ),
+            ), // ElevatedButton
+			Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+              child: const Text('Emergency Button'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
+              ),
+            ), // ElevatedButton
 		], // <Widget>[]
 		), // Column
 	), // Center
@@ -45,15 +53,17 @@ Widget build(BuildContext context) {
 }
 }
 
-class SecondRoute extends StatelessWidget {
-const SecondRoute({Key? key}) : super(key: key);
+
+
+class CampusMap extends StatelessWidget {
+const CampusMap({Key? key}) : super(key: key);
 
 @override
 Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(
 		title: const Text("Click Me Page"),
-		backgroundColor: Colors.green,
+		backgroundColor: Color.fromARGB(255, 215, 116, 11),
 	), // AppBar
 	body: Center(
 		child: ElevatedButton(
@@ -67,15 +77,17 @@ Widget build(BuildContext context) {
 }
 }
 
-class ThirdRoute extends StatelessWidget {
-const ThirdRoute({Key? key}) : super(key: key);
+
+
+class EmergencyButton extends StatelessWidget {
+const EmergencyButton({Key? key}) : super(key: key);
 
 @override
 Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(
 		title: const Text("Tap Me Page"),
-		backgroundColor: Colors.green,
+		backgroundColor: Color.fromARGB(255, 215, 116, 11),
 	), // AppBar
 	); // Scaffold
 }

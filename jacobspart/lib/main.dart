@@ -59,22 +59,22 @@ class CampusMap extends StatelessWidget {
 const CampusMap({Key? key}) : super(key: key);
 
 @override
-Widget build(BuildContext context) {
-	return Scaffold(
-	appBar: AppBar(
-		title: const Text("Click Me Page"),
-		backgroundColor: Color.fromARGB(255, 215, 116, 11),
-	), // AppBar
-	body: Center(
-		child: ElevatedButton(
-		onPressed: () {
-			Navigator.pop(context);
-		},
-		child: const Text('Back!'),
-		), // ElevatedButton
-	), // Center
-	); // Scaffold
-}
+  Widget build(BuildContext context) {
+    return Scaffold(
+    appBar: AppBar(
+      title: const Text("Click Me Page"),
+      backgroundColor: Color.fromARGB(255, 215, 116, 11),
+    ), // AppBar
+    body: Center(
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Text('Back!'),
+      ), // ElevatedButton
+    ), // Center
+    ); // Scaffold
+  }
 }
 
 
@@ -85,10 +85,10 @@ const EmergencyButton({Key? key}) : super(key: key);
 @override
 Widget build(BuildContext context) {
 	return Scaffold(
-	appBar: AppBar(
-		title: const Text("Tap Me Page"),
-		backgroundColor: Color.fromARGB(255, 215, 116, 11),
-	), // AppBar
+    appBar: AppBar(
+      title: const Text("Tap Me Page"),
+      backgroundColor: Color.fromARGB(255, 215, 116, 11),
+    ), // AppBar
 	); // Scaffold
 }
 }

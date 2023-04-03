@@ -4,6 +4,7 @@ import 'home_screen.dart';
 import 'safe_journey_button.dart';
 import 'general_safety_info_screen.dart';
 import 'campus_map.dart';
+import 'emergency_call_button.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
                   builder: (context) => SafeJourneyButton(),
                   settings: settings);
             case 'campusMap':
-              return MaterialPageRoute(
-                  builder: (context) => const CampusMap());
+              return MaterialPageRoute(builder: (context) => const CampusMap());
+            case 'emergencyButton':
+              return MaterialPageRoute(builder: (context) => const EmergencyButton());
           }
         });
-  } // end of MyApp
+  } 
 }

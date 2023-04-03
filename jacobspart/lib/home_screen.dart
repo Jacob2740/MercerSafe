@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width:300,
                       child: ElevatedButton(
                               child: const Text('Campus Safety Map',style:TextStyle(fontSize: 20)),
-                              onPressed:()=>  Navigator.pushNamed(context, 'campusMap '), //on pressed, switch to gen safety info screen
+                              onPressed:()=>  Navigator.pushNamed(context, 'campusMap'), //on pressed, switch to gen safety info screen
                 ))),
               Padding(
                   padding: const EdgeInsets.all(padVal),

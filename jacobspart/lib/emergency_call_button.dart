@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'colors_mercer_official.dart';
+import 'create_bottom_nav.dart';
 
 
 makingCall() async {
@@ -19,15 +20,16 @@ class EmergencyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    int initialIndex = 4;
+   
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Emergency Call Button'),
-          //backgroundColor: Color.fromARGB(255, 215, 116, 11),
-        ), // AppBar
+        ), 
 
-        body: SafeArea(
-          child: Center(
+        body: Center(
             child: Column(
 
               children: [
@@ -36,14 +38,14 @@ class EmergencyButton extends StatelessWidget {
                 ),
                 const Text(
                   'Need Help?',
-                  style: TextStyle( fontSize: 30.0, fontWeight: FontWeight.bold),
+                  //style: TextStyle( fontSize: 30.0, color: mercerOrange, fontWeight: FontWeight.bold),
                 ),
                 Container(
                   height: 20.0,
                 ),
                 const Text(
                   'Call MERPO',
-                  style: TextStyle( fontSize: 30.0, fontWeight: FontWeight.bold),
+                  //style: TextStyle( fontSize: 20.0, color: mercerOrange, fontWeight: FontWeight.bold),
                 ),
                 Container(
                   height: 20.0,
@@ -61,8 +63,8 @@ class EmergencyButton extends StatelessWidget {
                 ),
               ],
             ),
-          ),
         ),
+        bottomNavigationBar: bottomNav(initialIndex),
       ),
     );
   }          

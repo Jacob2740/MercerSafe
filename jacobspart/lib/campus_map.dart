@@ -20,6 +20,7 @@ class _CampusMapState extends State<CampusMap> {
     // created controller for displaying Google Maps
     Completer<GoogleMapController> _controller = Completer();
     int initialIndex = 1;
+    String _mapInfoText = "The Blue Emergency Stations are marked by the Orange markers on the map";
     
     // given camera position 
     static final CameraPosition _kGoogle = const CameraPosition(
@@ -97,32 +98,64 @@ class _CampusMapState extends State<CampusMap> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
+
         appBar: AppBar(
           title: const Text('Campus Safety Map'),
           elevation: 2,
         ),
-        body: Container(
-          child: SafeArea(
-            child: GoogleMap(
-              // given camera position
-              initialCameraPosition: _kGoogle,
-              // set markers on google map
-              markers: Set<Marker>.of(_markers),
-              // on below line we have given map type 
-              mapType: MapType.normal,
-              // on below line we have enabled location
-              myLocationEnabled: true,
-              myLocationButtonEnabled: true,
-              // on below line we have enabled compass 
-              compassEnabled: true,
-              // below line displays google map in our app
-              onMapCreated: (GoogleMapController controller){
-                  _controller.complete(controller);
-              },
+
+        body: Stack(
+          children: [
+
+            Container(
+              child: SafeArea(
+                child: GoogleMap(
+                  // given camera position
+                  initialCameraPosition: _kGoogle,
+                  // set markers on google map
+                  markers: Set<Marker>.of(_markers),
+                  // on below line we have given map type 
+                  mapType: MapType.normal,
+                  // on below line we have enabled location
+                  myLocationEnabled: true,
+                  myLocationButtonEnabled: true,
+                  // on below line we have enabled compass 
+                  compassEnabled: true,
+                  // below line displays google map in our app
+                  onMapCreated: (GoogleMapController controller){
+                      _controller.complete(controller);
+                  },
+                ),
+              ),
             ),
+
+            Positioned(
+                top: 16,
+                left: 16,
+                right: 16,
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    _mapInfoText,
+                    style: TextStyle(fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
           ),
-        ),
-        bottomNavigationBar: bottomNav(initialIndex),
-      );
-    }
+        ],
+      ),
+      bottomNavigationBar: bottomNav(initialIndex),
+    );
+  }
 }

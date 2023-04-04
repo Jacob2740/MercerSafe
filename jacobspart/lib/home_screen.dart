@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width:300,
                       child:ElevatedButton(
                             child: const Text('Call MERPO',style:TextStyle(fontSize: 20)),
-                            onPressed:()=> Navigator.pushNamed(context, 'emergencyButton'), //on pressed, switch to call MERPO screen
+                            onPressed:()=> Navigator.pushNamed(context, 'callButton'), //on pressed, switch to call MERPO screen
                   ))),
             ]),
       ),

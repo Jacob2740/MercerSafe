@@ -34,12 +34,16 @@ class MyApp extends StatelessWidget {
             case 'safeJourney':
               return MaterialPageRoute(
                   builder: (context) => SafeJourneyButton(),
-                  settings: settings);
+                  );
             case 'campusMap':
-              return MaterialPageRoute(builder: (context) => const CampusMap());
-            case 'emergencyButton':
-              return MaterialPageRoute(builder: (context) => const EmergencyButton());
+              return MaterialPageRoute(
+                  builder: (context) => const CampusMap());
+            case 'callButton':
+              return MaterialPageRoute(
+                  builder: (context) => const callButton(),
+                  settings: settings);
           }
-        });
+        }
+      );
   } 
 }

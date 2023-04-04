@@ -4,9 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
 import 'package:flutter/services.dart';
-import 'package:geolocator/geolocator.dart';
 import 'dart:async';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 class CampusMap extends StatefulWidget {
@@ -20,7 +18,7 @@ class _CampusMapState extends State<CampusMap> {
     // created controller for displaying Google Maps
     Completer<GoogleMapController> _controller = Completer();
     int initialIndex = 1;
-    String _mapInfoText = "The Blue Emergency Stations are marked by the Orange markers on the map";
+    String _mapInfoText = "The Blue Emergency Stations are marked by the blue markers on the map.";
     
     // given camera position 
     static final CameraPosition _kGoogle = const CameraPosition(
@@ -29,7 +27,7 @@ class _CampusMapState extends State<CampusMap> {
     );
     
     Uint8List? marketimages;
-    List<String> images = ['map_marker_small.png','map_marker_small.png', 'map_marker_small.png', 'map_marker_small.png', 'map_marker_small.png','map_marker_small.png','map_marker_small.png', 'map_marker_small.png', 'map_marker_small.png', 'map_marker_small.png','map_marker_small.png', 'map_marker_small.png', 'map_marker_small.png'];
+    List<String> images = ['map_marker_blue.png','map_marker_blue.png', 'map_marker_blue.png', 'map_marker_blue.png', 'map_marker_blue.png','map_marker_blue.png','map_marker_blue.png', 'map_marker_blue.png', 'map_marker_blue.png', 'map_marker_blue.png','map_marker_blue.png', 'map_marker_blue.png', 'map_marker_blue.png'];
   
 
     // created empty list of markers
@@ -61,7 +59,6 @@ class _CampusMapState extends State<CampusMap> {
       ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(), targetHeight: width);
       ui.FrameInfo fi = await codec.getNextFrame();
       return(await fi.image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
-    
     }
       
     @override
@@ -74,7 +71,7 @@ class _CampusMapState extends State<CampusMap> {
 
     loadData() async{
       for(int i=0 ;i<images.length; i++){
-        final Uint8List markIcons = await getImage(images[i], 100);
+        final Uint8List markIcons = await getImage(images[i], 10);
         // makers added according to index
         _markers.add(
           Marker(

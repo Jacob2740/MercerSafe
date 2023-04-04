@@ -62,7 +62,7 @@ class _bottomNavState extends State<bottomNav> {
         print("Go to registry log");
         break;
       case 4:
-        Navigator.pushNamed(context, "emergencyButton");
+        Navigator.pushNamed(context, 'callButton');
         break;
     }
   }

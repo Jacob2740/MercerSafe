@@ -4,7 +4,8 @@ import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
 
 makingCall() async {
-  var url = Uri.parse("tel:6785164182");
+  String policeNumber="tel:4783012911";
+  var url = Uri.parse(policeNumber);
 
   if (await canLaunchUrl(url)) {
     await launchUrl(url);

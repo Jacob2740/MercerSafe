@@ -9,32 +9,34 @@ class bottomNav extends StatefulWidget {
   State<bottomNav> createState() => _bottomNavState();
 }
 
+// ignore: camel_case_types
 class _bottomNavState extends State<bottomNav> {
   int _selectedIndex = 0;
 
+  @override
   Widget build(BuildContext context) {
-    _selectedIndex = this.widget.initialIndex;
+    _selectedIndex = widget.initialIndex;
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
+          icon: const Icon(Icons.home_outlined),
           label: 'Home',
           backgroundColor: mercerBlack,
         ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.map_outlined),
+            icon: const Icon(Icons.map_outlined),
             label: 'Map',
             backgroundColor: mercerBlack),
         BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             label: 'Info',
             backgroundColor: mercerBlack),
         BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book_outlined),
+            icon: const Icon(Icons.menu_book_outlined),
             label: 'Registry',
             backgroundColor: mercerBlack),
         BottomNavigationBarItem(
-            icon: Icon(Icons.ad_units_outlined),
+            icon: const Icon(Icons.ad_units_outlined),
             label: 'Call',
             backgroundColor: mercerBlack),
       ],

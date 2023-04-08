@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'create_bottom_nav.dart';
+import 'emergency_call_button.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width:300,
                       child:ElevatedButton(
                             child: const Text('Call MERPO',style:TextStyle(fontSize: 20)),
-                            onPressed:()=> Navigator.pushNamed(context, 'callButton'), //on pressed, switch to call MERPO screen
+                            onPressed:()=> makingCall(), //on pressed, switch to call MERPO screen
                   ))),
             ]),
       ),

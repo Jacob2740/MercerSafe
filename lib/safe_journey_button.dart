@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
+import 'emergency_call_button.dart';
 
 class SafeJourneyButton extends StatefulWidget {
   SafeJourneyButton({super.key});
@@ -74,7 +75,7 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
   }
 
   void callMerpo (BuildContext context) {
-    print('******************CALLING MERPO************************');
+    makingCall();
     merpoCalled=true;
   }
 

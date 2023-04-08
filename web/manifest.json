@@ -1,6 +1,6 @@
 {
-    "name": "jacobspart",
-    "short_name": "jacobspart",
+    "name": "MercerSafe",
+    "short_name": "MercerSafe",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -14,7 +14,7 @@ class SafeJourneyButton extends StatefulWidget {
 
 class _SafeJourneyButtonState extends State<SafeJourneyButton> {
 
-  int _counter = 60;
+  int _counter = 30;
   String buttonMessage = 'Tap the button to start!';
   Color buttonColor = mercerOrange;
   bool _buttonUnpressed = false;
@@ -99,7 +99,7 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
               Listener(
                 onPointerDown: (details) {
                   _buttonUnpressed = false;
-                  _counter=60; //reset timer when user presses down
+                  _counter=30; //reset timer when user presses down
                 },
                 onPointerUp: (details) {
                   _buttonUnpressed = true;

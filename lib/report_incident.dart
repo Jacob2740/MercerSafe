@@ -169,10 +169,11 @@ class ReportBox extends StatelessWidget {
       children: [
          Flexible(
             child: TextField(
-                decoration: const InputDecoration(
+                style: TextStyle(color: mercerWhite),
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Describe your incident here',
-                  hintStyle: TextStyle(color: Color.fromARGB(152, 255, 255, 255))
+                  hintStyle: TextStyle(color: mercerOrange)
                 ),
                 onChanged: (String value) {
                   textValue = value;

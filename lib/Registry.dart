@@ -114,7 +114,8 @@ class Registry extends State<RegistryView>{
                 Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
                     child: ElevatedButton(
-                        onPressed: back, child: const Text("Back to Report"))),
+                        onPressed: () => Navigator.pushNamed(context, 'reportIncident'),
+                        child: const Text("Back to Report"))),
 
               ],
             )
@@ -124,9 +125,5 @@ class Registry extends State<RegistryView>{
 
         
   }
-  void back() {
-    Navigator.pop(c);
-  }
-  
   
 }

@@ -61,7 +61,7 @@ class _bottomNavState extends State<bottomNav> {
         Navigator.pushNamed(context, 'genSafetyInfo');
         break;
       case 3:
-        print("Go to registry log");
+        Navigator.pushNamed(context, 'registry');
         break;
       case 4:
         Navigator.pushNamed(context, 'callButton');

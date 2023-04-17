@@ -1,5 +1,5 @@
 name: MercerSafe
-description: A new Flutter project.
+description: Mercer University's Campus Safety App.
 publish_to: 'none'
 version: 0.1.0
 
@@ -14,6 +14,14 @@ dependencies:
   google_maps_flutter_web: ^0.4.0+7
   url_launcher: ^6.1.10
   flutter_launcher_icons: ^0.13.0
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.9.0
+  firebase_auth: ^4.4.0
+  firebase_ui_auth: ^1.2.0
+  cloud_firestore: ^4.5.0
+  flutter_email_sender: ^5.2.0
+  firebase_storage: ^11.1.0
+  camera: ^0.10.4
 
 dev_dependencies:
   flutter_test:

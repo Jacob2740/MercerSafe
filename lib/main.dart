@@ -6,6 +6,8 @@ import 'general_safety_info_screen.dart';
 import 'campus_map.dart';
 import 'emergency_call_button.dart';
 import 'package:flutter/services.dart';
+import 'report_incident.dart';
+import 'Registry.dart';
 
 void main() => runApp(const MyApp());
 
@@ -33,14 +35,19 @@ class MyApp extends StatelessWidget {
                   builder: (context) => const GenSafetyInfo());
             case 'safeJourney':
               return MaterialPageRoute(
-                  builder: (context) => SafeJourneyButton(),
-                  );
+                  builder: (context) => SafeJourneyButton());
             case 'campusMap':
               return MaterialPageRoute(
                   builder: (context) => const CampusMap());
             case 'callButton':
               return MaterialPageRoute(
-                  builder: (context) => const callButton(),
+                  builder: (context) => const callButton());
+            case 'registry':
+              return MaterialPageRoute(
+                  builder: (context) =>  RegistryView() );
+            case 'reportIncident':
+              return MaterialPageRoute(
+                  builder: (context) => ReportIncidentFeature(),
                   settings: settings);
           }
         }

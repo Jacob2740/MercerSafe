@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width:300,
                       child: ElevatedButton(
                               child: const Text('Report an Incident', style:TextStyle(fontSize: 20)),
-                              onPressed:()=> print('***********OPEN REGISTRY********************'), //on pressed, switch to gen safety info screen
+                              onPressed:()=> Navigator.pushNamed(context, 'reportIncident'), //on pressed, switch to gen safety info screen
                   ))
                   ),
               Padding(

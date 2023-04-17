@@ -16,7 +16,7 @@ class _CampusMapState extends State<CampusMap> {
     int initialIndex = 1;
     final String _mapInfoText = "The Blue Emergency Stations are marked by the blue markers on the map. ";
     late GoogleMapController mapController; //contrller for Google map
-    final Set<Marker> markers = new Set(); //markers for google map
+    var markers = <Marker>{};
     static const LatLng showLocation = LatLng(32.82984008220686, -83.65257442971355);
    
 
@@ -71,7 +71,7 @@ class _CampusMapState extends State<CampusMap> {
 
               ],
           ),
-          bottomNavigationBar: bottomNav(initialIndex),
+          bottomNavigationBar: BottomNav(initialIndex),
        );
     }
   

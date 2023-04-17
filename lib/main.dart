@@ -7,7 +7,7 @@ import 'campus_map.dart';
 import 'emergency_call_button.dart';
 import 'package:flutter/services.dart';
 import 'report_incident.dart';
-import 'Registry.dart';
+import 'registry.dart';
 
 void main() => runApp(const MyApp());
 
@@ -35,21 +35,22 @@ class MyApp extends StatelessWidget {
                   builder: (context) => const GenSafetyInfo());
             case 'safeJourney':
               return MaterialPageRoute(
-                  builder: (context) => SafeJourneyButton());
+                  builder: (context) => const SafeJourneyButton());
             case 'campusMap':
               return MaterialPageRoute(
                   builder: (context) => const CampusMap());
             case 'callButton':
               return MaterialPageRoute(
-                  builder: (context) => const callButton());
+                  builder: (context) => const CallButton());
             case 'registry':
               return MaterialPageRoute(
-                  builder: (context) =>  RegistryView() );
+                  builder: (context) =>  const RegistryView() );
             case 'reportIncident':
               return MaterialPageRoute(
-                  builder: (context) => ReportIncidentFeature(),
+                  builder: (context) => const ReportIncidentFeature(),
                   settings: settings);
           }
+          return null;
         }
       );
   } 

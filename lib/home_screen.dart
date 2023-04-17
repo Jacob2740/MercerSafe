@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ))),
             ]),
       ),
-      bottomNavigationBar: bottomNav(initialIndex),
+      bottomNavigationBar: BottomNav(initialIndex),
     );
   }
 

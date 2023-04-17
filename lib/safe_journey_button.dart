@@ -4,7 +4,7 @@ import 'create_bottom_nav.dart';
 import 'emergency_call_button.dart';
 
 class SafeJourneyButton extends StatefulWidget {
-  SafeJourneyButton({super.key});
+  const SafeJourneyButton({super.key});
 
   final String title="Safe Journey Button";
 
@@ -39,7 +39,7 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
       });
 
       // wait a second
-      await Future.delayed(Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 1000));
     }
 
     while (!_buttonUnpressed) {
@@ -50,7 +50,7 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
       });
 
       // wait a second
-      await Future.delayed(Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 1000));
     }
   }
 
@@ -60,15 +60,15 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
       children: <Widget> [
       Padding(padding: const EdgeInsets.all(15),
               child: ElevatedButton(
-                      child: const Text('CALL MERPO'),
                       onPressed: () => callMerpo(context),
                       style: ElevatedButton.styleFrom(backgroundColor: mercerGreen),
+                      child: const Text('CALL MERPO'),
               )),
       Padding(padding: const EdgeInsets.all(15),
             child: ElevatedButton(
-              child: const Text('Return to Home Page'),
               onPressed: () =>  Navigator.pushNamed(context, 'home'),
               style: ElevatedButton.styleFrom(backgroundColor: mercerRed),
+              child: const Text('Return to Home Page'),
             )),
       ],
     );
@@ -110,21 +110,21 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
                   width:contSize,
                   height:contSize,
                   decoration: BoxDecoration(color:buttonColor, shape: BoxShape.circle),
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Align(
                       alignment: Alignment.center,
-                      child: Text('$buttonMessage', style: TextStyle(fontSize: 20.0, color: mercerWhite),  textAlign: TextAlign.center ) ),
+                      child: Text('buttonMessage', style: TextStyle(fontSize: 20.0, color: mercerWhite),  textAlign: TextAlign.center ) ),
                 ),
               ),
 
-              Padding(padding: EdgeInsets.all(15)),
+              const Padding(padding: EdgeInsets.all(15)),
 
-              _buttonUnpressed ?Visibility(child: myButtons, visible: true ) : Visibility(child: myButtons, visible: false), //ternary
+              _buttonUnpressed ?Visibility(visible: true, child: myButtons ) : Visibility(visible: false, child: myButtons), //ternary
 
             ]
         )
       ),
-      bottomNavigationBar: bottomNav(initialIndex),
+      bottomNavigationBar: BottomNav(initialIndex),
     );
   }
 }

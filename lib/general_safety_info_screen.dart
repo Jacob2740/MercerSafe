@@ -85,7 +85,7 @@ class _GenSafetyInfoState extends State<GenSafetyInfo> {
               ),
             ]),
       ),
-      bottomNavigationBar: bottomNav(initialIndex),
+      bottomNavigationBar: BottomNav(initialIndex),
     );
   }
 }

@@ -14,14 +14,14 @@ makingCall() async {
   }
 }
 
-class callButton extends StatefulWidget {
-  const callButton({super.key});
+class CallButton extends StatefulWidget {
+  const CallButton({super.key});
 
   @override
-  State<callButton> createState() => _callButtonState();
+  State<CallButton> createState() => _CallButtonState();
 }
 
-class _callButtonState extends State<callButton> {
+class _CallButtonState extends State<CallButton> {
   @override
   Widget build(BuildContext context) {
     int initialIndex = 4;
@@ -59,9 +59,9 @@ class _callButtonState extends State<callButton> {
             ElevatedButton(
               onPressed: makingCall,
               style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all<Size>(Size(120, 120)),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(120, 120)),
                 shape: MaterialStateProperty.all<CircleBorder>(
-                  CircleBorder(),
+                  const CircleBorder(),
                 ),
                 backgroundColor: MaterialStateProperty.all<Color>(mercerOrange),
                 padding: MaterialStateProperty.all(const EdgeInsets.all(5.0)),
@@ -77,7 +77,7 @@ class _callButtonState extends State<callButton> {
           ],
         ),
       ),
-      bottomNavigationBar: bottomNav(initialIndex),
+      bottomNavigationBar: BottomNav(initialIndex),
     );
   }
 }

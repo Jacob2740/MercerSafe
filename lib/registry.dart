@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 List<Widget> regisList = [];
 const int initialIndex=3;
@@ -21,14 +20,10 @@ Future<List<Widget>> returnItemsList() async{
       options: DefaultFirebaseOptions.currentPlatform,
     );
   } catch (error) {
-    print("Error occurred with Firebase.");
+    throw Exception("There was an error loading Firebase.");
   }
-  
-  print("Running Function");
+
   CollectionReference reg = FirebaseFirestore.instance.collection('incidentLog');
-  final storageRef = FirebaseStorage.instance.ref();
-  final imgs = storageRef.child("img");
-  final johndoe = await imgs.child("johndoe.jpeg").getDownloadURL();
     List<Column> containers= [];
     QuerySnapshot registrySnapshot = await reg.get();
     //QuerySnapshot registrySnapshot = await reg.collection("incidentLog");
@@ -44,11 +39,11 @@ Future<List<Widget>> returnItemsList() async{
           containers.add(Column(
           children: [
             ///Container(height: 160, width: 90, child: Image.network(johndoe, fit: BoxFit.fill)),
-            Text("\n"),
+            const Text("\n"),
             Text("Description: ${data['description']}", style:TextStyle(color: mercerWhite)),
             Text("Incident Type: ${data['incidentType']}", style:TextStyle(color: mercerWhite)),
             Text("Location: ${data['location']}", style:TextStyle(color: mercerWhite)),
-            Text("\n"),
+            const Text("\n"),
             Text("------------------------------------------------------------------------------------------------", style:TextStyle(color: mercerWhite)),
           ],
           ));
@@ -105,10 +100,10 @@ class Registry extends State<RegistryView>{
                   padding: EdgeInsets.fromLTRB(2, 2, 2,10),
                   )
             ]),
-            Expanded(child: Container(child: ListView(
+            Expanded(child: ListView(
               children: regisList,
               //returnItemsList() as List<Widget>,
-            ))),
+            )),
             Row(
               children: [
                 Padding(
@@ -121,9 +116,9 @@ class Registry extends State<RegistryView>{
             )
           ],
         ),
-        bottomNavigationBar: const bottomNav(initialIndex));
+        bottomNavigationBar: const BottomNav(initialIndex));
 
         
   }
-  
+
 }

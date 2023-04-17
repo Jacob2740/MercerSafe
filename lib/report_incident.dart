@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'dart:io';
 import 'colors_mercer_official.dart';
-import 'Registry.dart';
+import 'registry.dart';
 import 'create_bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
@@ -40,16 +39,16 @@ const String appTitle = 'Report an Incident';
 class ReportIncidentFeature extends StatefulWidget {
   const ReportIncidentFeature({Key? key}) : super(key: key);
   @override
-  initState createState() {
+  InitState createState() {
     // The createState method is used to create
     // instances of mutable widgets
 
-    return initState();
+    return InitState();
   }
 
 } // End of MyApp
 
-class initState extends State<ReportIncidentFeature>{
+class InitState extends State<ReportIncidentFeature>{
   double padVal=20;
   int initialIndex=0;
 
@@ -58,7 +57,7 @@ class initState extends State<ReportIncidentFeature>{
     return  Scaffold(
             appBar: AppBar(title: const Text(appTitle)),
             body: const ReportIncident(),
-            bottomNavigationBar: bottomNav(initialIndex));
+            bottomNavigationBar: BottomNav(initialIndex));
   }
 }
 class ReportIncident extends StatefulWidget {
@@ -85,6 +84,7 @@ class ReportIncident extends StatefulWidget {
 class textRow1 extends StatelessWidget {
   const textRow1({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Row(children: const <Widget>[
       Padding(
@@ -136,7 +136,7 @@ class DisplayOptions extends State<OptionsRow> {
                 incidentType = s!;
               });
             }),
-        const Text("Location: "),
+         Text("Location: ", style:TextStyle(color: mercerWhite)),
         DropdownButton(
             value: location,
             items: locationMap,
@@ -171,7 +171,7 @@ class ReportBox extends StatelessWidget {
             child: TextField(
                 style: TextStyle(color: mercerWhite),
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Describe your incident here',
                   hintStyle: TextStyle(color: mercerOrange)
                 ),
@@ -251,19 +251,20 @@ class DisplayReportOptions extends State<ReportIncident> {
         'incidentType': incidentType,
         'location': location
     };
-    DocumentReference docVal = await incidentLog.add(incidentReport);
+    await incidentLog.add(incidentReport);
 
-    final Email send_email = Email(
+    final Email sendEmail = Email(
       body: "Location: $location\nIncident Type: $incidentType\nDescription: ${report.getValue()}",
       subject: 'MercerSafe ]Incident Report',
       recipients: [emailAddress],
       isHTML: false
     );
 
-    await FlutterEmailSender.send(send_email);
+    await FlutterEmailSender.send(sendEmail);
     AlertDialog    alrtDialog = AlertDialog(
         content: Text('Report Sent!', style: TextStyle(color: mercerBlack),));
     // Display dialog
+    // ignore: use_build_context_synchronously
     showDialog( context: context, builder: (context) {return alrtDialog;}); // builder);
     //setState(() {});
   }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'colors_mercer_official.dart';
 
-class bottomNav extends StatefulWidget {
+class BottomNav extends StatefulWidget {
   final int initialIndex;
-  const bottomNav(this.initialIndex, {super.key});
+  const BottomNav(this.initialIndex, {super.key});
 
   @override
-  State<bottomNav> createState() => _bottomNavState();
+  State<BottomNav> createState() => _BottomNavState();
 }
 
 // ignore: camel_case_types
-class _bottomNavState extends State<bottomNav> {
+class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
 
   @override

@@ -113,7 +113,7 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
                   padding: const EdgeInsets.all(16.0),
                   child: Align(
                       alignment: Alignment.center,
-                      child: Text('buttonMessage', style: TextStyle(fontSize: 20.0, color: mercerWhite),  textAlign: TextAlign.center ) ),
+                      child: Text(buttonMessage, style: TextStyle(fontSize: 20.0, color: mercerWhite),  textAlign: TextAlign.center ) ),
                 ),
               ),
 

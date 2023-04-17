@@ -26,19 +26,14 @@ Future<List<Widget>> returnItemsList() async{
   CollectionReference reg = FirebaseFirestore.instance.collection('incidentLog');
     List<Column> containers= [];
     QuerySnapshot registrySnapshot = await reg.get();
-    //QuerySnapshot registrySnapshot = await reg.collection("incidentLog");
-    //final allData = registrySnapshot.docs.map((doc) => doc.data()).toList();
+
     for (QueryDocumentSnapshot doc in registrySnapshot.docs) {
         // Access the data in each document
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        // Use the data as needed
-        // ignore: avoid_print
-        //print(data);
 
         if(data["description"] != null){
           containers.add(Column(
           children: [
-            ///Container(height: 160, width: 90, child: Image.network(johndoe, fit: BoxFit.fill)),
             const Text("\n"),
             Text("Description: ${data['description']}", style:TextStyle(color: mercerWhite)),
             Text("Incident Type: ${data['incidentType']}", style:TextStyle(color: mercerWhite)),
@@ -77,8 +72,7 @@ class Registry extends State<RegistryView>{
     super.didChangeDependencies();
     build(context);
   }
-   
-  
+
   @override
   Widget build(BuildContext context) {
    

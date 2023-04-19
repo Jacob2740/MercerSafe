@@ -242,7 +242,7 @@ class DisplayReportOptions extends State<ReportIncident> {
     final Email sendEmail = Email(
         body: "Location: $location\nIncident Type: $incidentType\nDescription: ${report
             .getValue()}",
-        subject: 'MercerSafe ]Incident Report',
+        subject: 'MercerSafe Incident Report',
         recipients: [emailAddress],
         isHTML: false
     );

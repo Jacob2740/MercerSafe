@@ -25,6 +25,8 @@ List<String> incidentTypes = [
     ];
 String incidentType = incidentTypes.first;
  String location = locations.first;
+
+ //FUNCTIONS////////////////////////////////////////////////////////////////////
 void main() async {
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -35,6 +37,7 @@ void main() async {
 
 const String appTitle = 'Report an Incident';
 
+//CLASSES///////////////////////////////////////////////////////////////////////
 class ReportIncidentFeature extends StatefulWidget {
   const ReportIncidentFeature({Key? key}) : super(key: key);
   @override
@@ -48,7 +51,9 @@ class ReportIncidentFeature extends StatefulWidget {
 } // End of MyApp
 
 class InitState extends State<ReportIncidentFeature>{
+  //padVal is the value for how much padding is around each button on the home page
   double padVal=20;
+  //initialIndex determines which icon the bottom navigator will start on (See create_bottom_nav.dart)
   int initialIndex=0;
 
   @override
@@ -56,16 +61,17 @@ class InitState extends State<ReportIncidentFeature>{
     return  Scaffold(
             appBar: AppBar(title: const Text(appTitle)),
             body: const ReportIncident(),
+            //creates the bottom navigator menu (see create_bottom_nav.dart)
             bottomNavigationBar: BottomNav(initialIndex));
   }
 }
+
 class ReportIncident extends StatefulWidget {
   const ReportIncident({Key? key}) : super(key: key);
 
   @override
   DisplayReportOptions createState() {
-    // The createState method is used to create
-    // instances of mutable widgets
+    // The createState method is used to create instances of mutable widgets
 
     return DisplayReportOptions();
   }
@@ -91,7 +97,6 @@ class OptionsRow extends StatefulWidget {
   DisplayOptions createState() {
     return DisplayOptions();
   }
-  
 
 }
 
@@ -127,6 +132,7 @@ class DisplayOptions extends State<OptionsRow> {
                 incidentType = s!;
               });
             }),
+
          Text("Location: ", style:TextStyle(color: mercerWhite)),
         DropdownButton(
             value: location,
@@ -149,11 +155,11 @@ class DisplayOptions extends State<OptionsRow> {
     }
 }
 
-
 // ignore: must_be_immutable
 class ReportBox extends StatelessWidget {
   ReportBox({Key? key}) : super(key: key);
   String textValue = "";
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -182,7 +188,6 @@ class ReportBox extends StatelessWidget {
 class DisplayReportOptions extends State<ReportIncident> {
   ReportBox report = ReportBox();
   OptionsRow options = const OptionsRow();
-
 
   Future<CameraDescription> getCamera() async {
     final cameras = await availableCameras();
@@ -266,3 +271,5 @@ class DisplayReportOptions extends State<ReportIncident> {
   }
 
 }
+
+//END OF report_incident.dart///////////////////////////////////////////////////

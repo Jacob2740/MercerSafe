@@ -1,8 +1,10 @@
+//IMPORT////////////////////////////////////////////////////////////////////////
 import 'package:flutter/material.dart';
 import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
 import 'emergency_call_button.dart';
 
+//CLASSES///////////////////////////////////////////////////////////////////////
 class SafeJourneyButton extends StatefulWidget {
   const SafeJourneyButton({super.key});
 
@@ -128,3 +130,5 @@ class _SafeJourneyButtonState extends State<SafeJourneyButton> {
     );
   }
 }
+
+//END OF safe_journey_button.dart///////////////////////////////////////////////

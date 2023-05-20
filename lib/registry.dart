@@ -1,4 +1,5 @@
 // ignore: file_names
+//IMPORTS///////////////////////////////////////////////////////////////////////
 import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
 import 'package:flutter/material.dart';
@@ -6,13 +7,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 
+//GLOBAL VARIABLES//////////////////////////////////////////////////////////////
 List<Widget> regisList = [];
 const int initialIndex=3;
 
+//FUNCTIONS/////////////////////////////////////////////////////////////////////
 void loadReg() async {
   regisList = await returnItemsList();
 }
-
 
 Future<List<Widget>> returnItemsList() async{
   try {
@@ -47,6 +49,7 @@ Future<List<Widget>> returnItemsList() async{
     return containers;
   }
 
+//CLASSES///////////////////////////////////////////////////////////////////////
 class RegistryView extends StatefulWidget {
   const RegistryView({super.key});
    
@@ -55,7 +58,7 @@ class RegistryView extends StatefulWidget {
     return Registry();
   }
 
-  }
+  } //end of RegistryView
 
 class Registry extends State<RegistryView>{
   late BuildContext c;
@@ -115,4 +118,6 @@ class Registry extends State<RegistryView>{
         
   }
 
-}
+} //end of Registry
+
+//END OF registry.dart//////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+//IMPORTS///////////////////////////////////////////////////////////////////////
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'colors_mercer_official.dart';
 import 'registry.dart';
@@ -8,7 +9,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:camera/camera.dart';
 
-
+//GLOBAL VARIABLES//////////////////////////////////////////////////////////////
 List<String> incidentTypes = [
       "Environmental Hazard",
       "Suspicious Person",

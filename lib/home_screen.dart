@@ -4,7 +4,7 @@ import 'create_bottom_nav.dart';
 import 'emergency_call_button.dart';
 
 //CLASSES///////////////////////////////////////////////////////////////////////
-//MyHomePage, is Stateful. It calls on _MyHomePageState
+//MyHomePage is Stateful. It calls on _MyHomePageState
 class MyHomePage extends StatefulWidget {
   //constructor
   const MyHomePage({super.key});
@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-}
+} //end of MyHomePage
 
 //_MyHomePageState returns a scaffold that makes the UI for the homepage
 class _MyHomePageState extends State<MyHomePage> {
@@ -92,5 +92,5 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNav(initialIndex),
     );
   }
-}
+} //end of _MyHomePageState
 //END OF home_screen.dart///////////////////////////////////////////////////////

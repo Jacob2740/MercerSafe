@@ -1,9 +1,14 @@
+//IMPORTS///////////////////////////////////////////////////////////////////////
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'colors_mercer_official.dart';
 import 'create_bottom_nav.dart';
 
+//CLASSES///////////////////////////////////////////////////////////////////////
+//GenSafetyInfo is Stateful. It calls on _GenSafetyInfoState
 class GenSafetyInfo extends StatefulWidget {
+
+  //constructor
   const GenSafetyInfo({super.key});
 
   final String title="General Safety Information";
@@ -12,8 +17,10 @@ class GenSafetyInfo extends StatefulWidget {
   State<GenSafetyInfo> createState() => _GenSafetyInfoState();
 }
 
-/* for some reason,  */
+//_GenSafetyInfoState returns a scaffold that makes the UI for the general safety info page
 class _GenSafetyInfoState extends State<GenSafetyInfo> {
+
+  //links to Mercer's websites
   final Uri urlFire = Uri.parse('https://disclosure.mercer.edu/security/fire');
   final Uri urlShooter = Uri.parse('https://police.mercer.edu/active-shooter-preparedness/');
   final Uri urlTornado = Uri.parse('https://ehso.mercer.edu/emergency/weather.cfm');
@@ -22,7 +29,9 @@ class _GenSafetyInfoState extends State<GenSafetyInfo> {
 
   @override
   Widget build(BuildContext context) {
+    //padVal is the value for how much padding is around each button on the home page
     const double padVal=0.8;
+    //initialIndex determines which icon the bottom navigator will start on (See create_bottom_nav.dart)
     int initialIndex=2;
 
     return Scaffold(
@@ -85,6 +94,8 @@ class _GenSafetyInfoState extends State<GenSafetyInfo> {
               ),
             ]),
       ),
+
+      //creates the bottom navigator menu (see create_bottom_nav.dart)
       bottomNavigationBar: BottomNav(initialIndex),
     );
   }

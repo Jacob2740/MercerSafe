@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 //OBJECTS/////////////////////////////////////////////////////////
-
 //creates the official Mercer orange
 int mercerOrangeHex = 0xfff76800;
 Map <int, Color> mercerOrangeMap = {
@@ -98,7 +97,6 @@ Map <int, Color> mercerRedMap = {
   900: const Color.fromRGBO(249,49,74, 1),
 };
 MaterialColor mercerRed = MaterialColor(mercerRedHex, mercerRedMap);
-
 //END OF colors_mercer_official.dart////////////////////////////////////////////
 
 

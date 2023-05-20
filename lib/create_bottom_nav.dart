@@ -65,7 +65,6 @@ class _BottomNavState extends State<BottomNav> {
   }
 
   //FUNCTIONS///////////////////////////////////////////////////////////////////
-
   //when an icon is tapped, highlight the tapped icon and change _selectedIndex to the highlighted icon's index
   void _onItemTapped(int index) {
     setState(() {
@@ -92,5 +91,4 @@ class _BottomNavState extends State<BottomNav> {
     }
   }
 } //end of _BottomNavState
-
 //END OF create_bottom_nav.dart/////////////////////////////////////////////////
